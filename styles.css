@@ -62,6 +62,7 @@ header > .navigation {
 .logo {
     display: flex;
     align-items: center;
+    padding: 13px 15px;
 }
 
 .logo > img {
@@ -81,4 +82,27 @@ header > .navigation {
 
 .menu > li:hover > .dropdown {
     height: 400px;
+}
+
+.menu {
+    display: none;
+}
+
+
+.bar {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+@media (min-width: 1180px) {
+    .bar {
+        display: none;
+        background-color: red;
+    }
+
+    .menu {
+        display: block;
+    }
+    
 }
