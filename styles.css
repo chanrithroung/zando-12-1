@@ -22,9 +22,44 @@
     --shadow-sm: 0 3.5px 5px rgba(128, 128, 128, 0.204);
 }
 
+
+body {
+    height: 200vh;
+}
+
+
+.chat-container {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    font-family: var(--font-poppins);
+    font-size: 16px;
+}
+
+.chat-container > .message {
+    position: absolute;
+    width: 190px;
+    z-index: 100;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    color: black;
+    right: 110%;
+    border-radius: 25px 10px 25px 25px;
+    box-shadow: 0 0 3px #6d6d6d44;
+}
+
 header {
     width: 100vw;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     box-shadow: var(--shadow-sm);
     background-color: var(--light);
@@ -69,21 +104,6 @@ header > .navigation {
     width: 150px;
 }
 
-.menu > li > .dropdown {
-    height: 0px;
-    width: 100vw;
-    background-color: red;
-    position: absolute;
-    top: 100%;
-    transition: all 0.3s;
-    left: 0;
-}
-
-
-.menu > li:hover > .dropdown {
-    height: 400px;
-}
-
 .menu {
     /* display: none; */
     position: absolute;
@@ -119,10 +139,14 @@ header > .navigation {
     }
 
     .menu {
-        display: block;
+
         position: static;
         width: fit-content;
         height: fit-content;
+        overflow: visible;
+        background-color: orange;
+        
+
     }
 
     .menu> li {
@@ -133,4 +157,21 @@ header > .navigation {
     header > .navigation {
         width: 80vw;
     }
+
+
+    .menu > li > .dropdown {
+        height: 0px;
+        width: 100vw;
+        background-color: rgb(12, 12, 12);
+        position: absolute;
+        top: 100%;
+        transition: all 0.3s;
+        left: -11.6vw;
+    }
+
+
+    .menu > li:hover > .dropdown {
+        height: 400px;
+    }
+
 }
