@@ -10,6 +10,7 @@
 }
 
 :root {
+    scroll-behavior: smooth;
     /* colors  */
     --light: #ffffff;
     --blue: #0074FA;
@@ -28,6 +29,8 @@ body {
 }
 
 
+
+
 .chat-container {
     position: fixed;
     bottom: 120px;
@@ -44,6 +47,90 @@ body {
     font-family: var(--font-poppins);
     font-size: 16px;
 }
+
+
+.chat-container > input[type="checkbox"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+
+
+.chat-container  > .popup {
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    background-color: rgb(255, 0, 174);
+    top: -400px;
+    right: 100%;
+    border-radius: 24px;
+    display: none;
+    
+}
+
+.chat-container > input[type="checkbox"]:checked + .popup {
+    display: block;
+}
+
+
+
+.scroll-top {
+    display: block;
+    position: fixed;
+    height: 40px;
+    width: 24px;
+    border: 1px solid black;
+    bottom: 20px;
+    right: 30px;
+    z-index: 1000;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.scroll-top > .blink {
+    position: absolute;
+    top: -70%;
+    color: black;
+    animation: blink 800ms linear infinite;
+    
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+    
+}
+
+
+.scroll-top > .rotate {
+    display: block;
+
+    width: 1px;
+    background-color: black;
+    height: 6px;
+    position: absolute;
+
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    0%, 100% {
+        top: 6px;
+    }
+
+    50% {
+        top: 2px;
+    }
+}
+
 
 .chat-container > .message {
     position: absolute;
